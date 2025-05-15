@@ -1,23 +1,27 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import LoginPage from './components/pages/login/LoginPage'
-import DashboardPage from './components/pages/dashboard/DashboardPage'
-import IssuePage from './components/pages/issues/IssuePage'
-import ProfilePage from './components/pages/profile/ProfilePage'
-import ProjectPage from './components/pages/projects/ProjectPage'
+import LoginPage from 'components/pages/login/LoginPage'
+import DashboardPage from 'components/pages/dashboard/DashboardPage'
+import IssuePage from 'components/pages/issues/IssuePage'
+import ProfilePage from 'components/pages/profile/ProfilePage'
+import ProjectPage from 'components/pages/projects/ProjectPage'
+import SettingPage from 'components/pages/setting/SettingPage'
+import Layout from 'components/layout/Layout'
 
 const App = () => {
     return (
-        <>
-            <Routes>
-                <Route path="/" element={<Navigate to="/login" />} />
-                <Route path="/login" element={<LoginPage />} />
+        <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<LoginPage />} />
+
+            <Route element={<Layout />}>
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/issues" element={<IssuePage />} />
                 <Route path="/profiles" element={<ProfilePage />} />
                 <Route path="/projects" element={<ProjectPage />} />
-            </Routes>
-        </>
+                <Route path="/setting" element={<SettingPage />} />
+            </Route>
+        </Routes>
     )
 }
 

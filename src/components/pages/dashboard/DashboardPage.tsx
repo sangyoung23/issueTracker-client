@@ -1,6 +1,7 @@
-import React from 'react'
-
 // ✅ 타입 선언
+
+import AdminDashboard from './AdminDashboard'
+// import UserDashboard from './UserDashboard'
 
 const DashboardPage = () => {
     // ✅ 상태 (State) 관리
@@ -11,7 +12,12 @@ const DashboardPage = () => {
 
     // ✅ 함수
 
-    return <div>DashboardPage</div>
+    return (
+        <div>
+            <AdminDashboard />
+            {/* <UserDashboard /> */}
+        </div>
+    )
 }
 
 export default DashboardPage

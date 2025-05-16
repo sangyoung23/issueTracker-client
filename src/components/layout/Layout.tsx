@@ -5,7 +5,7 @@ const Layout = () => {
     return (
         <div style={{ display: 'flex' }}>
             <SideBar />
-            <main style={{ flex: 1, padding: '20px' }}>
+            <main style={{ flex: 1 }}>
                 <Outlet />
             </main>
         </div>

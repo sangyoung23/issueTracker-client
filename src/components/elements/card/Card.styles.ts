@@ -12,7 +12,7 @@ export const CardContainer = styled.div<CardContainerProps>`
     width: ${({ width }) => width || '500px'};
     height: ${({ height }) => height || '140px'};
     background: white;
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 16px;
     display: flex;

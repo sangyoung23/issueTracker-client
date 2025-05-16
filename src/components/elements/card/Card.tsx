@@ -2,9 +2,12 @@ import React from 'react'
 import { CardContainer, CardHeader, CardBody, CardFooter } from './Card.styles'
 import { CardProps } from 'types/card.type'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
+
 const Card: React.FC<CardProps> = ({
     title,
-    children,
+    content,
     footer,
     width,
     height,
@@ -12,8 +15,16 @@ const Card: React.FC<CardProps> = ({
     return (
         <CardContainer width={width} height={height}>
             {title && <CardHeader>{title}</CardHeader>}
-            <CardBody>{children}</CardBody>
-            {footer && <CardFooter>{footer}</CardFooter>}
+            <CardBody>{content}</CardBody>
+            {footer && (
+                <CardFooter>
+                    <FontAwesomeIcon
+                        icon={faClock}
+                        style={{ marginRight: '6px', color: '#999' }}
+                    />
+                    {footer}
+                </CardFooter>
+            )}
         </CardContainer>
     )
 }

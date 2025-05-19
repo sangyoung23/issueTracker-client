@@ -114,13 +114,15 @@ const AdminDashboard = () => {
         },
     ]
 
+    const chartData = [{ 진행중: 5, 완료: 8, 대기: 3 }]
+
     return (
         <DashboardWrapper>
             <TopSummary>
                 <TopHeaderRow>
                     <GreetingSection>
                         <span>안녕하세요, {userName}님</span>
-                        <h1>대시보드</h1>
+                        <h1>개발자 대시보드</h1>
                     </GreetingSection>
                     <ActionsSection>
                         <Input />
@@ -158,7 +160,7 @@ const AdminDashboard = () => {
                 </div>
                 <div style={{ flex: 3 }}>
                     <h2>진행 상태 통계</h2>
-                    <StatisticsChart />
+                    <StatisticsChart data={chartData} />
                     <SectionHeader>
                         <h2>최근 프로젝트 목록</h2>
                         <ViewAllButton>모두 보기</ViewAllButton>

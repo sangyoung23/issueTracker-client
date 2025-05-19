@@ -47,7 +47,7 @@ export const TaskStatus = styled.div`
     color: #4f46e5;
 `
 export const MoreCard = styled(motion.div)`
-    border: 2px dashed #ccc;
+    border: 2px dashed #ff9500;
     border-radius: 12px;
     padding: 16px 20px;
     text-align: center;

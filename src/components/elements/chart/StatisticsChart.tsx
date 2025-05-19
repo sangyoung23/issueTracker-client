@@ -9,10 +9,9 @@ import {
     Legend,
     ResponsiveContainer,
 } from 'recharts'
+import { StatisticsChartProps } from 'types/statisticsChart.type'
 
-const data = [{ 진행중: 5, 완료: 8, 대기: 3 }]
-
-const StatisticsChart = () => (
+const StatisticsChart: React.FC<StatisticsChartProps> = ({ data }) => (
     <ResponsiveContainer width="100%" height={250}>
         <BarChart
             data={data}

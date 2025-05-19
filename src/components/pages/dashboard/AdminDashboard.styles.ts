@@ -125,7 +125,9 @@ export const MainContent = styled.div`
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 
     h2 {
-        margin-bottom: 10px;
+        margin: 0;
+        font-weight: 600;
+        font-size: 18px;
     }
 
     @media (max-width: 768px) {
@@ -140,12 +142,6 @@ export const SectionHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
-
-    h2 {
-        margin: 0;
-        font-weight: 600;
-        font-size: 20px;
-    }
 `
 
 export const ViewAllButton = styled.h3`

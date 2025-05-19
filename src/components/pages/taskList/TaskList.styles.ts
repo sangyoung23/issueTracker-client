@@ -46,3 +46,16 @@ export const TaskStatus = styled.div`
     background-color: #e0e7ff;
     color: #4f46e5;
 `
+export const MoreCard = styled(motion.div)`
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: center;
+    color: #555;
+    cursor: pointer;
+    background-color: #fff;
+
+    &:hover {
+        background-color: #f8f9fa;
+    }
+`

@@ -4,40 +4,25 @@ import {
     TaskCard,
     TaskInfo,
     TaskStatus,
+    MoreCard,
 } from './TaskList.styles'
+import { TaskListProps } from 'types/taskList.type'
 
-// ✅ 애니메이션 variants 정의
 const cardVariants = {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0 },
     whileHover: { scale: 1.02 },
 }
 
-const dummyTasks = [
-    {
-        id: 1,
-        title: '매물 등록 수정',
-        description: 'Login page returns 500 error',
-        status: '진행중',
-    },
-    {
-        id: 2,
-        title: '맵 검색 수정',
-        description: 'Add new banner image',
-        status: '대기',
-    },
-    {
-        id: 3,
-        title: '매물 관리 레이아웃 수정',
-        description: 'Check code quality and merge',
-        status: '완료',
-    },
-]
+const MAX_VISIBLE_TASKS = 6
 
-const TaskList = () => {
+const TaskList = ({ tasks }: TaskListProps) => {
+    const visibleTasks = tasks.slice(0, MAX_VISIBLE_TASKS)
+    const hasMore = tasks.length > MAX_VISIBLE_TASKS
+
     return (
         <TaskContainer>
-            {dummyTasks.map((task, index) => (
+            {visibleTasks.map((task, index) => (
                 <TaskCard
                     key={task.id}
                     variants={cardVariants}
@@ -50,9 +35,18 @@ const TaskList = () => {
                         <h4>{task.title}</h4>
                         <span>{task.description}</span>
                     </TaskInfo>
-                    <TaskStatus>{task.status}</TaskStatus>
+                    {task.status && <TaskStatus>{task.status}</TaskStatus>}
                 </TaskCard>
             ))}
+
+            {hasMore && (
+                <MoreCard
+                    onClick={() => alert('전체 보기 클릭')}
+                    whileHover={{ scale: 1.02 }}
+                >
+                    + 전체 보기
+                </MoreCard>
+            )}
         </TaskContainer>
     )
 }

@@ -20,7 +20,7 @@ import StatisticsChart from 'components/elements/chart/StatisticsChart'
 const AdminDashboard = () => {
     const userName = '상용'
 
-    const cards = [
+    const issueStatus = [
         {
             title: '진행 중인 일감',
             content: '5개',
@@ -43,13 +43,86 @@ const AdminDashboard = () => {
         },
     ]
 
+    // TODO : 최근 이슈 5개 정도 일부만 불러오기
+    const issues = [
+        {
+            id: 1,
+            title: '매물 등록 수정',
+            description: 'Login page returns 500 error',
+            status: '진행중',
+        },
+        {
+            id: 2,
+            title: '맵 검색 수정',
+            description: 'Add new banner image',
+            status: '대기',
+        },
+        {
+            id: 3,
+            title: '매물 관리 레이아웃 수정',
+            description: 'Check code quality and merge',
+            status: '완료',
+        },
+        {
+            id: 4,
+            title: '매물',
+            description: 'Check code quality and merge',
+            status: '대기',
+        },
+        {
+            id: 5,
+            title: '매물 관리',
+            description: 'Check code quality and merge',
+            status: '진행중',
+        },
+        {
+            id: 6,
+            title: '레이아웃 수정',
+            description: 'Check code quality and merge',
+            status: '완료',
+        },
+        {
+            id: 7,
+            title: '등록 에러',
+            description: 'Check code quality and merge',
+            status: '완료',
+        },
+        {
+            id: 8,
+            title: '수정 에러',
+            description: 'Check code quality and merge',
+            status: '진행중',
+        },
+    ]
+
+    // TODO : 최근 프로젝트 1~4개 정도 일부만 불러오기
+    const projects = [
+        {
+            id: 1,
+            title: '방도리',
+            description: 'Login page returns 500 error',
+        },
+        {
+            id: 2,
+            title: '방구도리',
+            description: 'Add new banner image',
+        },
+        {
+            id: 3,
+            title: '방두리',
+            description: 'Check code quality and merge',
+        },
+    ]
+
+    const chartData = [{ 진행중: 5, 완료: 8, 대기: 3 }]
+
     return (
         <DashboardWrapper>
             <TopSummary>
                 <TopHeaderRow>
                     <GreetingSection>
                         <span>안녕하세요, {userName}님</span>
-                        <h1>대시보드</h1>
+                        <h1>개발자 대시보드</h1>
                     </GreetingSection>
                     <ActionsSection>
                         <Input />
@@ -58,7 +131,7 @@ const AdminDashboard = () => {
                 </TopHeaderRow>
 
                 <CardRow>
-                    {cards.map((card, index) => (
+                    {issueStatus.map((card, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
@@ -83,11 +156,16 @@ const AdminDashboard = () => {
                         <h2>최근 일감 목록</h2>
                         <ViewAllButton>모두 보기</ViewAllButton>
                     </SectionHeader>
-                    <TaskList />
+                    <TaskList tasks={issues} />
                 </div>
                 <div style={{ flex: 3 }}>
                     <h2>진행 상태 통계</h2>
-                    <StatisticsChart />
+                    <StatisticsChart data={chartData} />
+                    <SectionHeader>
+                        <h2>최근 프로젝트 목록</h2>
+                        <ViewAllButton>모두 보기</ViewAllButton>
+                    </SectionHeader>
+                    <TaskList tasks={projects} />
                 </div>
             </MainContent>
         </DashboardWrapper>

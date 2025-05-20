@@ -18,6 +18,7 @@ export const TaskCard = styled(motion.div)<TaskCardProps>`
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     transition: background-color 0.3s ease;
     height: ${({ variant }) => (variant === 'notice' ? '120px' : 'auto')};
+    cursor: pointer;
 
     &:hover {
         background-color: #f1f3f5;

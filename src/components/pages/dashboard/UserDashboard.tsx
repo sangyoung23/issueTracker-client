@@ -16,8 +16,11 @@ import Button from 'components/elements/button/Button'
 import Input from 'components/elements/input/Input'
 import TaskList from '../taskList/TaskList'
 import StatisticsChart from 'components/elements/chart/StatisticsChart'
+import { useNavigate } from 'react-router-dom'
 
 const UserDashboard = () => {
+    const navigate = useNavigate()
+
     const userName = '상용'
 
     const issueStatus = [
@@ -46,49 +49,49 @@ const UserDashboard = () => {
     // TODO : 최근 이슈 5개 정도 일부만 불러오기
     const issues = [
         {
-            id: 1,
+            id: '1',
             title: '매물 등록 수정',
             description: 'Login page returns 500 error',
             status: '진행중',
         },
         {
-            id: 2,
+            id: '2',
             title: '맵 검색 수정',
             description: 'Add new banner image',
             status: '대기',
         },
         {
-            id: 3,
+            id: '3',
             title: '매물 관리 레이아웃 수정',
             description: 'Check code quality and merge',
             status: '완료',
         },
         {
-            id: 4,
+            id: '4',
             title: '매물',
             description: 'Check code quality and merge',
             status: '대기',
         },
         {
-            id: 5,
+            id: '5',
             title: '매물 관리',
             description: 'Check code quality and merge',
             status: '진행중',
         },
         {
-            id: 6,
+            id: '6',
             title: '레이아웃 수정',
             description: 'Check code quality and merge',
             status: '완료',
         },
         {
-            id: 7,
+            id: '7',
             title: '등록 에러',
             description: 'Check code quality and merge',
             status: '완료',
         },
         {
-            id: 8,
+            id: '8',
             title: '수정 에러',
             description: 'Check code quality and merge',
             status: '진행중',
@@ -97,18 +100,26 @@ const UserDashboard = () => {
 
     const notices = [
         {
-            id: 1,
+            id: '1',
             title: '정기 점검 안내',
             description: '5월 25일 새벽 2시~4시 시스템 점검 예정',
         },
         {
-            id: 2,
+            id: '2',
             title: '신규 기능 안내',
             description: '지도 기반 검색 기능이 추가되었습니다.',
         },
     ]
 
     const chartData = [{ 진행중: 5, 완료: 8, 대기: 3 }]
+
+    const handleIssueAll = () => {
+        navigate('/issues')
+    }
+
+    const handleNoticeAll = () => {
+        navigate('/notice')
+    }
 
     return (
         <DashboardWrapper>
@@ -148,7 +159,9 @@ const UserDashboard = () => {
                 <div style={{ flex: 2 }}>
                     <SectionHeader>
                         <h2>최근 등록한 일감 목록</h2>
-                        <ViewAllButton>모두 보기</ViewAllButton>
+                        <ViewAllButton onClick={handleIssueAll}>
+                            모두 보기
+                        </ViewAllButton>
                     </SectionHeader>
                     <TaskList tasks={issues} />
                 </div>
@@ -156,8 +169,10 @@ const UserDashboard = () => {
                     <h2>진행 상태 통계</h2>
                     <StatisticsChart data={chartData} />
                     <SectionHeader>
-                        <h2>공지사항 / 시스템 알림</h2>
-                        <ViewAllButton>모두 보기</ViewAllButton>
+                        <h2>공지사항</h2>
+                        <ViewAllButton onClick={handleNoticeAll}>
+                            모두 보기
+                        </ViewAllButton>
                     </SectionHeader>
                     <TaskList tasks={notices} variant="notice" />
                 </div>

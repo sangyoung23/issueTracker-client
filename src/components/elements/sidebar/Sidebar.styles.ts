@@ -73,7 +73,7 @@ export const SidebarTop = styled.div`
 export const SidebarMenu = styled.nav`
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     flex-grow: 1;
     margin-top: 24px;
 

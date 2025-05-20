@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 
-// 전체 페이지 컨테이너
 export const PageWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -10,7 +9,6 @@ export const PageWrapper = styled.div`
     background-color: #f8f9fa;
 `
 
-// 상단 필터 + 등록 버튼 영역
 export const TopBar = styled.div`
     display: flex;
     justify-content: space-between;
@@ -18,15 +16,13 @@ export const TopBar = styled.div`
     margin-bottom: 20px;
 `
 
-// 필터 바 (왼쪽)
 export const FilterGroup = styled.div`
     display: flex;
     gap: 12px;
 `
 
-// 등록 버튼 (오른쪽)
 export const CreateButton = styled.button`
-    background-color: #4f46e5;
+    background-color: #ff9500;
     color: white;
     border: none;
     padding: 10px 16px;
@@ -41,14 +37,12 @@ export const CreateButton = styled.button`
     }
 `
 
-// Task 리스트 영역 (스크롤 가능하게)
 export const TaskListWrapper = styled.div`
     flex: 1;
     overflow-y: auto;
     padding-right: 8px;
 `
 
-// 더 보기 버튼
 export const LoadMoreButton = styled.button`
     margin: 16px auto;
     padding: 10px 16px;
@@ -65,7 +59,6 @@ export const LoadMoreButton = styled.button`
     }
 `
 
-// 슬라이드 상세 보기 패널
 export const SlidePanel = styled.div<{ isOpen: boolean }>`
     position: fixed;
     top: 0;

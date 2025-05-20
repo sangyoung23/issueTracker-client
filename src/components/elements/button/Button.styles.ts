@@ -5,30 +5,21 @@ export const Button = styled.button<{
     mr?: string
     width?: string
 }>`
-    position: relative;
+    padding: 6px 12px;
+    background-color: #3ecf8e;
+    color: white;
     border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.8rem;
     height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 16px;
-    width: ${props => props.width || '100px'};
-    margin-right: ${props => props.mr || '0px'};
-    border-radius: 8px;
-    border: 1px solid #5245cfde;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    background-color: #ff9500;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 12px;
-    transition: 0.25s;
-    color: #000;
+    cursor: pointer;
     white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+
+    width: ${props => props.width || '90px'};
+    margin-right: ${props => props.mr || '0px'};
 
     &:hover {
-        transform: scale(1.1);
-        cursor: pointer;
+        background-color: #32b77c;
     }
 `

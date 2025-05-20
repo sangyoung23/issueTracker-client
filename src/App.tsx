@@ -5,6 +5,7 @@ import DashboardPage from 'components/pages/dashboard/DashboardPage'
 import IssuePage from 'components/pages/issues/IssuePage'
 import ProfilePage from 'components/pages/profile/ProfilePage'
 import ProjectPage from 'components/pages/projects/ProjectPage'
+import NoticePage from 'components/pages/notice/NoticePage'
 import SettingPage from 'components/pages/setting/SettingPage'
 import Layout from 'components/layout/Layout'
 
@@ -19,6 +20,7 @@ const App = () => {
                 <Route path="/issues" element={<IssuePage />} />
                 <Route path="/profiles" element={<ProfilePage />} />
                 <Route path="/projects" element={<ProjectPage />} />
+                <Route path="/notice" element={<NoticePage />} />
                 <Route path="/setting" element={<SettingPage />} />
             </Route>
         </Routes>

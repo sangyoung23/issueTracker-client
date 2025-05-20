@@ -12,7 +12,7 @@ import {
     SectionHeader,
     ViewAllButton,
 } from './AdminDashboard.styles'
-import Button from 'components/elements/button/Button'
+import AButton from 'components/elements/button/Button'
 import Input from 'components/elements/input/Input'
 import TaskList from '../taskList/TaskList'
 import StatisticsChart from 'components/elements/chart/StatisticsChart'
@@ -131,7 +131,7 @@ const UserDashboard = () => {
                     </GreetingSection>
                     <ActionsSection>
                         <Input />
-                        <Button>새 일감 등록</Button>
+                        <AButton>새 일감 등록</AButton>
                     </ActionsSection>
                 </TopHeaderRow>
 

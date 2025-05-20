@@ -6,7 +6,7 @@ import UserDashboard from './UserDashboard'
 
 const DashboardPage = () => {
     // TODO 로그인 시 api response에 담긴 권한으로 설정하기
-    const [userRole, setUserRole] = useState('admin')
+    const [userRole, setUserRole] = useState('user')
 
     // ✅ 훅 사용 (Alert 등)
 

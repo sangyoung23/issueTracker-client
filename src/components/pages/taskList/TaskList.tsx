@@ -6,7 +6,7 @@ import {
     TaskStatus,
     MoreCard,
 } from './TaskList.styles'
-import { TaskListProps } from 'types/taskList.type'
+import { ExtendedTaskListProps } from 'types/taskList.type'
 
 const cardVariants = {
     initial: { opacity: 0, y: 10 },
@@ -16,7 +16,7 @@ const cardVariants = {
 
 const MAX_VISIBLE_TASKS = 6
 
-const TaskList = ({ tasks }: TaskListProps) => {
+const TaskList = ({ tasks, variant = 'default' }: ExtendedTaskListProps) => {
     const visibleTasks = tasks.slice(0, MAX_VISIBLE_TASKS)
     const hasMore = tasks.length > MAX_VISIBLE_TASKS
 
@@ -30,8 +30,9 @@ const TaskList = ({ tasks }: TaskListProps) => {
                     animate="animate"
                     whileHover="whileHover"
                     transition={{ duration: 0.8, delay: index * 0.12 }}
+                    variant={variant}
                 >
-                    <TaskInfo>
+                    <TaskInfo variant={variant}>
                         <h4>{task.title}</h4>
                         <span>{task.description}</span>
                     </TaskInfo>

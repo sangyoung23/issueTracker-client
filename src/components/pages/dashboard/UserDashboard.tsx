@@ -95,22 +95,16 @@ const UserDashboard = () => {
         },
     ]
 
-    // TODO : 최근 프로젝트 1~4개 정도 일부만 불러오기
-    const projects = [
+    const notices = [
         {
             id: 1,
-            title: '방도리',
-            description: 'Login page returns 500 error',
+            title: '정기 점검 안내',
+            description: '5월 25일 새벽 2시~4시 시스템 점검 예정',
         },
         {
             id: 2,
-            title: '방구도리',
-            description: 'Add new banner image',
-        },
-        {
-            id: 3,
-            title: '방두리',
-            description: 'Check code quality and merge',
+            title: '신규 기능 안내',
+            description: '지도 기반 검색 기능이 추가되었습니다.',
         },
     ]
 
@@ -162,10 +156,10 @@ const UserDashboard = () => {
                     <h2>진행 상태 통계</h2>
                     <StatisticsChart data={chartData} />
                     <SectionHeader>
-                        <h2>최근 프로젝트 목록</h2>
+                        <h2>공지사항 / 시스템 알림</h2>
                         <ViewAllButton>모두 보기</ViewAllButton>
                     </SectionHeader>
-                    <TaskList tasks={projects} />
+                    <TaskList tasks={notices} variant="notice" />
                 </div>
             </MainContent>
         </DashboardWrapper>

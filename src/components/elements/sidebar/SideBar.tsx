@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faHome,
+    faBell,
     faList,
     faFolder,
     faGear,
@@ -53,6 +54,10 @@ const SideBar = () => {
                     <NavLink to="/projects" onClick={closeSidebar}>
                         <FontAwesomeIcon icon={faFolder} />
                         <span>프로젝트</span>
+                    </NavLink>
+                    <NavLink to="/notice" onClick={closeSidebar}>
+                        <FontAwesomeIcon icon={faBell} />
+                        <span>공지사항</span>
                     </NavLink>
                     <NavLink to="/setting" onClick={closeSidebar}>
                         <FontAwesomeIcon icon={faGear} />

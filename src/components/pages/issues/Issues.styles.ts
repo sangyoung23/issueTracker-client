@@ -7,6 +7,10 @@ export const PageWrapper = styled.div`
     height: 100%;
     overflow: hidden;
     background-color: #f8f9fa;
+
+    @media (max-width: 768px) {
+        padding: 16px;
+    }
 `
 
 export const TopBar = styled.div`
@@ -14,11 +18,22 @@ export const TopBar = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
 `
 
 export const FilterGroup = styled.div`
     display: flex;
     gap: 12px;
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
 `
 
 export const CreateButton = styled.button`
@@ -35,12 +50,21 @@ export const CreateButton = styled.button`
     &:hover {
         background-color: #4338ca;
     }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        font-size: 13px;
+    }
 `
 
 export const TaskListWrapper = styled.div`
     flex: 1;
     overflow-y: auto;
     padding-right: 8px;
+
+    @media (max-width: 768px) {
+        padding-right: 0;
+    }
 `
 
 export const LoadMoreButton = styled.button`
@@ -56,6 +80,10 @@ export const LoadMoreButton = styled.button`
 
     &:hover {
         background-color: #f1f3f5;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
     }
 `
 
@@ -73,4 +101,9 @@ export const SlidePanel = styled.div<{ isOpen: boolean }>`
     z-index: 100;
     padding: 24px;
     overflow-y: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 16px;
+    }
 `

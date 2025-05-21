@@ -4,7 +4,7 @@ export const Panel = styled.div<{ isOpen: boolean }>`
     position: fixed;
     top: 0;
     right: 0;
-    width: 900px;
+    width: 1150px;
     max-width: 80vw;
     height: 100vh;
     background-color: white;

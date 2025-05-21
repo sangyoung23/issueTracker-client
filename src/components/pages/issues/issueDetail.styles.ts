@@ -43,8 +43,8 @@ export const Title = styled.h2`
 export const InfoSection = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 24px;
+    gap: 16px;
+    padding: 32px;
 `
 
 export const InfoRow = styled.div`
@@ -52,7 +52,7 @@ export const InfoRow = styled.div`
     align-items: center;
     gap: 12px;
     font-size: 0.95rem;
-    color: #444;
+    color: #888;
 `
 
 export const StatusBadge = styled.div<{ status: string }>`
@@ -91,12 +91,73 @@ export const Description = styled.div`
     white-space: pre-wrap;
     flex-grow: 1;
     padding: 0 24px 24px 24px;
+    margin-bottom: 50px;
     overflow-y: auto;
+`
+export const StyledUploadLabel = styled.label`
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #333;
+    transition: background 0.2s;
+
+    &:hover {
+        background-color: #e0e0e0;
+    }
+
+    svg {
+        font-size: 16px;
+    }
+`
+
+export const AttachedFileSection = styled.div`
+    margin: 32px 0;
+`
+
+export const SectionTitle = styled.div`
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1f2937;
+`
+
+export const Divider = styled.hr`
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 16px;
+`
+
+export const IssueImageWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px 0;
+    margin-left: 15px;
+
+    img {
+        width: 200px;
+        height: 70px;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
 `
 
 export const CommentSection = styled.div`
-    margin-top: 24px;
-    padding: 16px 24px;
+    margin-top: 32px;
+    padding: 32px;
     border-top: 1px solid #eee;
     background-color: #fafafa;
 `
@@ -196,11 +257,11 @@ export const CommentActions = styled.div`
         }
 
         &.like:hover svg {
-            color: #ec4899; /* 핑크 */
+            color: #ec4899;
         }
 
         &.reply:hover {
-            color: #2563eb; /* 파랑 */
+            color: #2563eb;
         }
     }
 `

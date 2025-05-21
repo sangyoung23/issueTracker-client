@@ -10,6 +10,10 @@ export const PanelContainer = styled.div`
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
     border-radius: 20px 0 0 20px;
     overflow-y: auto;
+
+    @media (max-width: 768px) {
+        border-radius: 0;
+    }
 `
 
 export const TopWrapper = styled.div`
@@ -18,6 +22,10 @@ export const TopWrapper = styled.div`
     align-items: center;
     padding: 16px 24px;
     border-bottom: 1px solid #e5e5e5;
+
+    @media (max-width: 768px) {
+        padding: 12px 16px;
+    }
 `
 
 export const CloseButton = styled.button`
@@ -38,6 +46,10 @@ export const Title = styled.h2`
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 8px;
+
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+    }
 `
 
 export const InfoSection = styled.div`
@@ -45,6 +57,10 @@ export const InfoSection = styled.div`
     flex-direction: column;
     gap: 16px;
     padding: 32px;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
 `
 
 export const InfoRow = styled.div`
@@ -53,6 +69,12 @@ export const InfoRow = styled.div`
     gap: 12px;
     font-size: 0.95rem;
     color: #888;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
 `
 
 export const StatusBadge = styled.div<{ status: string }>`
@@ -93,7 +115,12 @@ export const Description = styled.div`
     padding: 0 24px 24px 24px;
     margin-bottom: 50px;
     overflow-y: auto;
+
+    @media (max-width: 768px) {
+        padding: 0 16px 20px 16px;
+    }
 `
+
 export const StyledUploadLabel = styled.label`
     margin-left: auto;
     display: flex;
@@ -118,6 +145,10 @@ export const StyledUploadLabel = styled.label`
 
 export const AttachedFileSection = styled.div`
     margin: 32px 0;
+
+    @media (max-width: 768px) {
+        margin: 24px 0;
+    }
 `
 
 export const SectionTitle = styled.div`
@@ -129,6 +160,11 @@ export const SectionTitle = styled.div`
     align-items: center;
     gap: 8px;
     color: #1f2937;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        margin-left: 8px;
+    }
 `
 
 export const Divider = styled.hr`
@@ -145,6 +181,7 @@ export const IssueImageWrapper = styled.div`
     align-items: center;
     padding: 16px 0;
     margin-left: 15px;
+    gap: 10px;
 
     img {
         width: 200px;
@@ -152,6 +189,11 @@ export const IssueImageWrapper = styled.div`
         object-fit: contain;
         border-radius: 8px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+        @media (max-width: 480px) {
+            width: 100px;
+            height: 50px;
+        }
     }
 `
 
@@ -160,6 +202,10 @@ export const CommentSection = styled.div`
     padding: 32px;
     border-top: 1px solid #eee;
     background-color: #fafafa;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
 `
 
 export const CommentInputWrapper = styled.div`
@@ -168,6 +214,11 @@ export const CommentInputWrapper = styled.div`
     gap: 8px;
     width: 100%;
     margin-top: 12px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: stretch;
+    }
 `
 
 export const CommentInput = styled.textarea`
@@ -235,6 +286,14 @@ export const ReplyWrapper = styled.div`
     margin-top: 0.5rem;
     padding-left: 1rem;
     border-left: 2px solid #eee;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid #eee;
+        padding-top: 1rem;
+    }
 `
 
 export const CommentActions = styled.div`
@@ -263,5 +322,10 @@ export const CommentActions = styled.div`
         &.reply:hover {
             color: #2563eb;
         }
+    }
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        gap: 12px;
     }
 `

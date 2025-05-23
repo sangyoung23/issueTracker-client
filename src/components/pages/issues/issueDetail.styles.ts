@@ -131,7 +131,7 @@ export const StyledUploadLabel = styled.label`
     background-color: #f0f0f0;
     border-radius: 6px;
     cursor: pointer;
-    color: #333;
+    color: #1976d2;
     transition: background 0.2s;
 
     &:hover {

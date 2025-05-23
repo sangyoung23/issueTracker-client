@@ -12,6 +12,7 @@ import SlidePanel from 'components/elements/slidePanel/SlidePanel'
 import IssueDetailPage from './IssueDetailPage'
 import { Task } from 'types/issueTaskList.type'
 import { issues } from './issueDummyData'
+import { useNavigate } from 'react-router-dom'
 
 const ITEMS_PER_PAGE = 10
 
@@ -20,8 +21,10 @@ const IssuePage = () => {
     const [isPanelOpen, setIsPanelOpen] = useState(false)
     const [selectedTask, setSelectedTask] = useState<Task | null>(null)
 
+    const navigate = useNavigate()
+
     const handleCreate = () => {
-        console.log('등록 버튼 클릭')
+        navigate('/issueCreate')
     }
 
     const handleLoadMore = () => {
@@ -46,6 +49,7 @@ const IssuePage = () => {
                     <span>필터 1</span>
                     <span>필터 2</span>
                 </FilterGroup>
+                {/* TODO: 로그인 했을 때 가져 온 권한으로 user면 보이고 admin이면 등록 버튼 hidden */}
                 <CreateButton onClick={handleCreate}>등록</CreateButton>
             </TopBar>
 

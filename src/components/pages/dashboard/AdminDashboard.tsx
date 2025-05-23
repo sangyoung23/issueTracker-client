@@ -16,8 +16,11 @@ import AButton from 'components/elements/button/Button'
 import Input from 'components/elements/input/Input'
 import TaskList from '../taskList/TaskList'
 import StatisticsChart from 'components/elements/chart/StatisticsChart'
+import { useNavigate } from 'react-router-dom'
 
 const AdminDashboard = () => {
+    const navigate = useNavigate()
+
     const userName = '상용'
 
     const issueStatus = [
@@ -116,6 +119,10 @@ const AdminDashboard = () => {
 
     const chartData = [{ 진행중: 5, 완료: 8, 대기: 3 }]
 
+    const createIssue = () => {
+        navigate('/issueCreate')
+    }
+
     return (
         <DashboardWrapper>
             <TopSummary>
@@ -126,7 +133,7 @@ const AdminDashboard = () => {
                     </GreetingSection>
                     <ActionsSection>
                         <Input />
-                        <AButton>새 일감 등록</AButton>
+                        <AButton onClick={createIssue}>새 일감 등록</AButton>
                     </ActionsSection>
                 </TopHeaderRow>
 

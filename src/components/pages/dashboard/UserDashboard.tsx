@@ -121,6 +121,10 @@ const UserDashboard = () => {
         navigate('/notice')
     }
 
+    const createIssue = () => {
+        navigate('/issueCreate')
+    }
+
     return (
         <DashboardWrapper>
             <TopSummary>
@@ -131,7 +135,7 @@ const UserDashboard = () => {
                     </GreetingSection>
                     <ActionsSection>
                         <Input />
-                        <AButton>새 일감 등록</AButton>
+                        <AButton onClick={createIssue}>새 일감 등록</AButton>
                     </ActionsSection>
                 </TopHeaderRow>
 

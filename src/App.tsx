@@ -8,12 +8,14 @@ import ProjectPage from 'components/pages/projects/ProjectPage'
 import NoticePage from 'components/pages/notice/NoticePage'
 import SettingPage from 'components/pages/setting/SettingPage'
 import Layout from 'components/layout/Layout'
+import IssueCreatePage from 'components/pages/issues/IssueCreatePage'
 
 const App = () => {
     return (
         <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/issueCreate" element={<IssueCreatePage />} />
 
             <Route element={<Layout />}>
                 <Route path="/dashboard" element={<DashboardPage />} />
